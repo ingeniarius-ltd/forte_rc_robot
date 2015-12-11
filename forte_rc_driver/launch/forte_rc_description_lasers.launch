@@ -1,0 +1,45 @@
+<launch>
+
+<!-- Laser Launch -->
+    <param name="pub_map_odom_transform" value="true"/>
+    <param name="map_frame" value="map" />
+    <param name="base_frame" value="base_frame" />
+    <param name="odom_frame" value="base_frame" />
+    <param name="pub_map_odom_transform" value="false"/>
+<group ns="laser1">
+  <node pkg="urg_node" type="urg_node" name="urg_node1">
+	<param name="ip_address" type="str" value="192.168.0.20"/>
+	<param name="frame_id" value="laser1" />
+  </node>
+
+  <node pkg="tf" type="static_transform_publisher" name="base_link_to_laser1" args="0.375 0.295 0.02 0.92388 0.38268 0.0 0.0 /base_link laser1 30" />
+</group>
+
+<group ns="laser2">
+
+  <node pkg="urg_node" type="urg_node" name="urg_node2">
+	<param name="ip_address" type="str" value="192.168.0.10"/>
+	<param name="frame_id" value="laser2" />
+  </node>
+
+  <node pkg="tf" type="static_transform_publisher" name="base_link_to_laser2" args="-0.375 -0.295 0.02 0.38268 -0.92388 0.0 0.0 /base_link laser2 30" />
+
+</group>
+
+<!-- Forte_RC Description-->
+ 
+  <arg  name="model" />
+  <arg  name="gui"  default="False" />
+  <param  name="robot_description" textfile="$(find forte_rc_description)/robots/FORTE_ROSv10.URDF" />
+
+  <param name="use_gui" value="$(arg gui)" />
+  <node
+    name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+  <param name="/use_gui" value="true" />
+  <node
+    name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+  <node
+    name="rviz" pkg="rviz" type="rviz" args="-d $(find forte_rc_description)/FORTE.rviz" />
+
+
+</launch>

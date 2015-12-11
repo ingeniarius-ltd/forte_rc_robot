@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="ros_pololu_servo" type="ros_pololu_servo_node" name="ros_pololu_servo_node" output="screen">
+        <param name="pololu_motors_yaml" value="$(find forte_rc_driver)/yaml_files/pololu_motors.yaml" />
+        <param name="port_name" value="/dev/pololu_maestro" />
+        <param name="baud_rate" value="115200" />
+        <param name="rate_hz" value="10" />
+        <param name="daisy_chain" value="false" />
+    </node>
+</launch>

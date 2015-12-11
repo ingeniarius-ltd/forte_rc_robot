@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+
+ <!-- ForteRC rosserial-->
+  <node name="forteRC_node" type="serial_node.py" pkg="rosserial_python" args="/dev/forteRC_arduino" output="screen">
+	<param name="baud" value="115200"/>
+  </node>
+
+</launch>

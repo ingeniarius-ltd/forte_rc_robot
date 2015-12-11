@@ -1,0 +1,9 @@
+<launch>
+
+<node pkg="cpr_mover" name="cpr_mover" type="cpr_mover">	
+
+	<param 
+	name="robot_type" 
+	value="mover6"/>
+	 </node>
+</launch>
