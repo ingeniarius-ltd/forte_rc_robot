@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>forte_rc_description</name>
-  <version>1.0.0</version>
+  <version>1.0.4</version>
   <description>The forte_rc_description package</description>
 
   <maintainer email="support@ingeniarius.pt">Ingeniarius, Ltd.</maintainer>
