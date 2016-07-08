@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" args="scan:=scan_multi " output="screen">
+
+      <param name="xmin" value="-10.0"/>
+      <param name="ymin" value="-10.0"/>
+      <param name="xmax" value="10.0"/>
+      <param name="ymax" value="10.0"/>
+      <param name="lskip" value="10"/>
+      <param name="linearUpdate" value="0.1"/>
+      <param name="angularUpdate" value="0.1"/>
+      <param name="maxUrange" value="19.5.0"/>
+      
+    </node>
+</launch>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<launch>
+
+ <!-- joy node -->
+   <node respawn="true" pkg="wiimote"  type="wiimote_node.py" name="wiimote" output="screen"/>
+
+ <!-- Limit topic frequency -->
+  <node pkg="topic_tools" type="throttle" name="throttle" args="messages joy 10.0" output="screen"/>
+
+ <!-- Velocities 2 modes -->
+  <param name="v1_linear" value="0.30" type="double"/>
+  <param name="v1_angular" value="0.45" type="double"/>
+  <param name="v2_linear" value="0.45" type="double"/>
+  <param name="v2_angular" value="0.60" type="double"/>
+  <param name="safety" value="true" type="bool"/>
+
+  <node pkg="forte_rc_teleop" type="forte_rc_teleop_node" name="forte_rc_wii_teleop"/>
+
+
+</launch>

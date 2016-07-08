@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+
+   <!-- Remap cloud cmd_vel -->
+  <node pkg="topic_tools" type="relay" name="relay" args="cloud_cmd_vel cmd_vel" output="screen"/>
+
+</launch>

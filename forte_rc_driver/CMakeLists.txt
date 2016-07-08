@@ -8,6 +8,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  sensor_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -131,6 +132,8 @@ link_directories( /usr/local/lib )
 
 ## Declare a C++ executable
  add_executable(forte_rc_driver_node src/serial3_arduino_start.cpp)
+ add_executable(remap_pololu_motors_to_joints_state_node src/remap_pololu_motors_to_joints_state.cpp)
+ add_executable(forte_rc_head_control_node src/forte_rc_head_control.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
@@ -139,7 +142,9 @@ link_directories( /usr/local/lib )
 #)
 
 ## Specify libraries to link a library or executable target against
- target_link_libraries(forte_rc_driver_node ${catkin_LIBRARIES} rs232)
+target_link_libraries(forte_rc_driver_node ${catkin_LIBRARIES} rs232)
+target_link_libraries(remap_pololu_motors_to_joints_state_node ${catkin_LIBRARIES})
+target_link_libraries(forte_rc_head_control_node ${catkin_LIBRARIES})
 
 #############
 ## Install ##

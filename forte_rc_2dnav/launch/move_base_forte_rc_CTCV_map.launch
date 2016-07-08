@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<launch>
+  <master auto="start"/>
+
+  <!-- Run the map server -->
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find forte_rc_2dnav)/maps/CTCV_3rdFloor.pgm 0.05" respawn="false"/>
+
+  <!--- Run AMCL -->
+  <include file="$(find forte_rc_2dnav)/amcl/amcl_CTCV_3rdFloor.launch" />
+
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+
+    <rosparam file="$(find forte_rc_2dnav)/CTCV_3rd_floor_params/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find forte_rc_2dnav)/CTCV_3rd_floor_params/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find forte_rc_2dnav)/CTCV_3rd_floor_params/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find forte_rc_2dnav)/CTCV_3rd_floor_params/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find forte_rc_2dnav)/CTCV_3rd_floor_params/base_local_planner_params.yaml" command="load" />
+    <param name= "controller_frequency" value="10" type="double"/>  </node>
+  </node>
+
+</launch>
+

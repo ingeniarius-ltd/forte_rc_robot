@@ -1,0 +1,1010 @@
+<?xml version="1.0"?>
+<robot
+  name="forte_rc">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0427015017638332 0.006993249804152 0.313534344014149"
+        rpy="0 0 0" />
+      <mass
+        value="34.5794030719526" />
+      <inertia
+        ixx="5.56933743883727"
+        ixy="-0.00220642784653799"
+        ixz="-1.00205671616163"
+        iyy="6.05751738030707"
+        iyz="0.159970635403109"
+        izz="2.9580227711553" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forte_rc_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.498039215686275 0.756862745098039 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forte_rc_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="linkHead1">
+    <inertial>
+      <origin
+        xyz="-0.00524567302970144 0.0295538501906324 0.0833195034430392"
+        rpy="0 0 0" />
+      <mass
+        value="1.5255070290887" />
+      <inertia
+        ixx="0.0268521934825585"
+        ixy="-0.000520704071832814"
+        ixz="-2.66849307679222E-05"
+        iyy="0.00530927354307168"
+        iyz="9.51448654162142E-05"
+        izz="0.0264128528187247" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forte_rc_description/meshes/linkHead1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forte_rc_description/meshes/linkHead1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jointHead1"
+    type="revolute">
+    <origin
+      xyz="-0.17937 0.0083878 1.287"
+      rpy="4.4601E-17 4.4601E-17 1.9892E-33" />
+    <parent
+      link="base_link" />
+    <child
+      link="linkHead1" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="linkHead2">
+    <inertial>
+      <origin
+        xyz="0.0122337601350649 -0.00853994877497444 -0.195964611563498"
+        rpy="0 0 0" />
+      <mass
+        value="0.459773515215341" />
+      <inertia
+        ixx="0.00480631815289146"
+        ixy="4.71168157422321E-05"
+        ixz="-2.8320001082072E-05"
+        iyy="0.00443282064210696"
+        iyz="5.17914840986153E-06"
+        izz="0.000770334005814736" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forte_rc_description/meshes/linkHead2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.101960784313725 0.101960784313725 0.101960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forte_rc_description/meshes/linkHead2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jointHead2"
+    type="revolute">
+    <origin
+      xyz="-0.01619 0.19355 0.086388"
+      rpy="1.5708 0 3.1416" />
+    <parent
+      link="linkHead1" />
+    <child
+      link="linkHead2" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.1415"
+      upper="3.1415"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="linkArm1">
+    <inertial>
+      <origin
+        xyz="0.137519677142391 -0.0880586267184263 0.0126705624819141"
+        rpy="0 0 0" />
+      <mass
+        value="0.52178126714957" />
+      <inertia
+        ixx="0.00159650417378591"
+        ixy="-0.00129764845899595"
+        ixz="0.000868128161516552"
+        iyy="0.00279209053244661"
+        iyz="-0.000555892528941718"
+        izz="0.00309238217079331" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forte_rc_description/meshes/linkArm1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forte_rc_description/meshes/linkArm1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jointArm1"
+    type="revolute">
+    <origin
+      xyz="-0.21199 -0.253 0.99828"
+      rpy="4.6841E-16 -2.039E-16 -9.0942E-33" />
+    <parent
+      link="base_link" />
+    <child
+      link="linkArm1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.1415"
+      upper="3.1415"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="linkArm2">
+    <inertial>
+      <origin
+        xyz="0.161856869151376 -0.0216411009283777 0.0126705624819135"
+        rpy="0 0 0" />
+      <mass
+        value="0.521781267149568" />
+      <inertia
+        ixx="0.000815760364692039"
+        ixy="-0.000375345147743712"
+        ixz="0.00102176287663821"
+        iyy="0.00357283434154047"
+        iyz="-0.000136614905758207"
+        izz="0.0030923821707933" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forte_rc_description/meshes/linkArm2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forte_rc_description/meshes/linkArm2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jointArm2"
+    type="revolute">
+    <origin
+      xyz="0.19454 -0.12457 0.1"
+      rpy="-5.9631E-17 6.6646E-18 -2.8245E-33" />
+    <parent
+      link="linkArm1" />
+    <child
+      link="linkArm2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.1415"
+      upper="3.1415"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="linkArm3">
+    <inertial>
+      <origin
+        xyz="0.0211330092766769 0.0229379805652743 -0.00669495307036283"
+        rpy="0 0 0" />
+      <mass
+        value="0.130220464844418" />
+      <inertia
+        ixx="0.000107033303433906"
+        ixy="4.02532802102327E-05"
+        ixz="2.07266008103687E-05"
+        iyy="0.000100427754969848"
+        iyz="2.24970993904869E-05"
+        izz="0.000129760868665658" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forte_rc_description/meshes/linkArm3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forte_rc_description/meshes/linkArm3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jointArm3"
+    type="revolute">
+    <origin
+      xyz="0.22896 -0.030613 0.10263"
+      rpy="-4.9304E-32 0 0" />
+    <parent
+      link="linkArm2" />
+    <child
+      link="linkArm3" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.1415"
+      upper="3.1415"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="linkArm4">
+    <inertial>
+      <origin
+        xyz="0.127893041611719 0.00415145603266476 -0.0254000089650765"
+        rpy="0 0 0" />
+      <mass
+        value="0.488565305397619" />
+      <inertia
+        ixx="0.00019583517969232"
+        ixy="8.95909611935702E-05"
+        ixz="-3.03885254565833E-10"
+        iyy="0.00224154294516237"
+        iyz="-1.71527701744608E-09"
+        izz="0.00221295410866643" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forte_rc_description/meshes/linkArm4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forte_rc_description/meshes/linkArm4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jointArm4"
+    type="revolute">
+    <origin
+      xyz="0.060043 0.027685 0.018308"
+      rpy="1.5708 4.317E-16 0.82633" />
+    <parent
+      link="linkArm3" />
+    <child
+      link="linkArm4" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.1415"
+      upper="3.1415"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="linkArm5">
+    <inertial>
+      <origin
+        xyz="-0.0311422190528455 0.0027018189900877 0.00759997425023884"
+        rpy="0 0 0" />
+      <mass
+        value="0.0359476099989269" />
+      <inertia
+        ixx="6.00968329175781E-06"
+        ixy="-1.0689078968537E-06"
+        ixz="7.58190306901134E-07"
+        iyy="1.82369643300922E-05"
+        iyz="-6.5773200390085E-08"
+        izz="1.97519257310732E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forte_rc_description/meshes/linkArm5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forte_rc_description/meshes/linkArm5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jointArm5"
+    type="revolute">
+    <origin
+      xyz="0.28855 0.018659 -0.0254"
+      rpy="1.9216 -1.5708 0" />
+    <parent
+      link="linkArm4" />
+    <child
+      link="linkArm5" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.1415"
+      upper="3.1415"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="linkArm6">
+    <inertial>
+      <origin
+        xyz="0.0316695990014716 -0.00978471125129299 -0.0158750000000581"
+        rpy="0 0 0" />
+      <mass
+        value="2.19388256283597" />
+      <inertia
+        ixx="0.0319634564810447"
+        ixy="0.00354021329250803"
+        ixz="1.9138618641279E-12"
+        iyy="0.021598848827216"
+        iyz="6.1944990152954E-12"
+        izz="0.0128096578232169" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forte_rc_description/meshes/linkArm6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forte_rc_description/meshes/linkArm6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jointArm6"
+    type="revolute">
+    <origin
+      xyz="-0.05517 0.020721 0.0063114"
+      rpy="1.5708 0.031619 3.0551" />
+    <parent
+      link="linkArm5" />
+    <child
+      link="linkArm6" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.1415"
+      upper="3.1415"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="linkMover1">
+    <inertial>
+      <origin
+        xyz="1.46935904776768E-07 3.75433839572281E-09 0.0553614774712994"
+        rpy="0 0 0" />
+      <mass
+        value="1.07577591240282" />
+      <inertia
+        ixx="0.00236780570277025"
+        ixy="-7.29416194830103E-10"
+        ixz="1.66508907668477E-09"
+        iyy="0.00147909452427081"
+        iyz="-4.08430094157573E-09"
+        izz="0.0024022253053522" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forte_rc_description/meshes/linkMover1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forte_rc_description/meshes/linkMover1.STL" />
+      </geometry>
+    </collision>
+  </link>
+<joint
+    name="Joint0"
+    type="revolute">
+    <origin
+      xyz="-0.18909 0.35589 0.97175"
+      rpy="-1.5708 -0.054728 -2.4434E-18" />
+    <parent
+      link="base_link" />
+    <child
+      link="linkMover1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.1415"
+      upper="3.1415"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="linkMover2">
+    <inertial>
+      <origin
+        xyz="-0.109712173862922 -0.127530552825393 0.0740589085016401"
+        rpy="0 0 0" />
+      <mass
+        value="1.10341210319593" />
+      <inertia
+        ixx="0.00512558064538431"
+        ixy="0.00140581492518557"
+        ixz="-0.000829600286659806"
+        iyy="0.00444265167962794"
+        iyz="-0.000987934458509045"
+        izz="0.00420201462734237" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forte_rc_description/meshes/linkMover2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forte_rc_description/meshes/linkMover2.STL" />
+      </geometry>
+    </collision>
+  </link>
+<joint
+    name="Joint1"
+    type="revolute">
+    <origin
+      xyz="0 0.09 0.059428"
+      rpy="1.5708 1.5708 0" />
+    <parent
+      link="linkMover1" />
+    <child
+      link="linkMover2" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.1415"
+      upper="3.1415"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="linkMover3">
+    <inertial>
+      <origin
+        xyz="0.0320387094570084 -0.056504377980065 -0.0854443254258588"
+        rpy="0 0 0" />
+      <mass
+        value="0.60277394217218" />
+      <inertia
+        ixx="0.00106895173132689"
+        ixy="-0.00201558894505965"
+        ixz="0.00042718924395512"
+        iyy="0.00614562658385459"
+        iyz="-0.000149172459831645"
+        izz="0.00662559724791634" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forte_rc_description/meshes/linkMover3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forte_rc_description/meshes/linkMover3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint2"
+    type="revolute">
+    <origin
+      xyz="-0.12523 -0.14289 0"
+      rpy="3.1416 2.1511E-16 1.5708" />
+    <parent
+      link="linkMover2" />
+    <child
+      link="linkMover3" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.1415"
+      upper="3.1415"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="linkMover4">
+    <inertial>
+      <origin
+        xyz="-0.00471370104359026 0.032141013556892 -0.0299999999999931"
+        rpy="0 0 0" />
+      <mass
+        value="0.104123308973718" />
+      <inertia
+        ixx="5.36406666702021E-05"
+        ixy="2.86960003431456E-06"
+        ixz="-2.07332826171092E-20"
+        iyy="5.69629130489882E-05"
+        iyz="1.84801478609902E-19"
+        izz="4.20060793279251E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forte_rc_description/meshes/linkMover4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forte_rc_description/meshes/linkMover4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint3"
+    type="revolute">
+    <origin
+      xyz="0.31394 -0.15636 -0.1"
+      rpy="-3.1416 2.0562E-16 1.5708" />
+    <parent
+      link="linkMover3" />
+    <child
+      link="linkMover4" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.1415"
+      upper="3.1415"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="linkMover5">
+    <inertial>
+      <origin
+        xyz="-0.0012569479954932 9.75948047088337E-06 0.0140865635793092"
+        rpy="0 0 0" />
+      <mass
+        value="0.0185822649276052" />
+      <inertia
+        ixx="1.13384371359377E-05"
+        ixy="5.18112897435647E-08"
+        ixz="-3.85939019200042E-07"
+        iyy="8.88163613154519E-06"
+        iyz="2.36785849636554E-09"
+        izz="4.71117256527195E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forte_rc_description/meshes/linkMover5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forte_rc_description/meshes/linkMover5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint4"
+    type="revolute">
+    <origin
+      xyz="-0.017882 0.052012 -0.03"
+      rpy="1.5708 -0.017882 -2.809" />
+    <parent
+      link="linkMover4" />
+    <child
+      link="linkMover5" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.1415"
+      upper="3.1415"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="linkWheelLF">
+    <inertial>
+      <origin
+        xyz="6.10622663543836E-16 -1.06387121334706E-13 -0.00263328767869575"
+        rpy="0 0 0" />
+      <mass
+        value="0.52105146283316" />
+      <inertia
+        ixx="0.00178448696421567"
+        ixy="1.0828469197699E-17"
+        ixz="2.88949725725399E-16"
+        iyy="0.00178448696421787"
+        iyz="-1.90353714236459E-17"
+        izz="0.00335486661519421" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forte_rc_description/meshes/linkWheelLF.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forte_rc_description/meshes/linkWheelLF.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jointWheelLF"
+    type="continuous">
+    <origin
+      xyz="-0.2364 -0.24903 0.021003"
+      rpy="1.5708 4.4601E-17 1.9892E-33" />
+    <parent
+      link="base_link" />
+    <child
+      link="linkWheelLF" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="linkWheelLB">
+    <inertial>
+      <origin
+        xyz="9.59232693276135E-12 -1.21249954521119E-11 -0.00267525383575007"
+        rpy="0 0 0" />
+      <mass
+        value="0.528619696269049" />
+      <inertia
+        ixx="0.00188182044155917"
+        ixy="1.30629915313089E-13"
+        ixz="-6.20398151079396E-14"
+        iyy="0.00188182044162096"
+        iyz="-5.03678166399551E-14"
+        izz="0.00354238937504426" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forte_rc_description/meshes/linkWheelLB.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forte_rc_description/meshes/linkWheelLB.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jointWheelLB"
+    type="continuous">
+    <origin
+      xyz="0.23668 -0.24903 0.021003"
+      rpy="1.5708 4.4601E-17 1.9892E-33" />
+    <parent
+      link="base_link" />
+    <child
+      link="linkWheelLB" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="linkWheelRB">
+    <inertial>
+      <origin
+        xyz="5.24580379135386E-14 -9.25648446781224E-14 -0.00263328767869583"
+        rpy="0 0 0" />
+      <mass
+        value="0.52105146283316" />
+      <inertia
+        ixx="0.00178448696421616"
+        ixy="9.26715030668407E-16"
+        ixz="1.9785588505029E-16"
+        iyy="0.0017844869642173"
+        iyz="1.46420973998575E-16"
+        izz="0.00335486661519417" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forte_rc_description/meshes/linkWheelRB.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forte_rc_description/meshes/linkWheelRB.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jointWheelRB"
+    type="continuous">
+    <origin
+      xyz="0.23668 0.24903 0.021003"
+      rpy="1.5708 -4.4601E-17 -3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="linkWheelRB" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="linkWheelRF">
+    <inertial>
+      <origin
+        xyz="1.54348062109122E-11 -8.85069795231175E-13 -0.00267525383574992"
+        rpy="0 0 0" />
+      <mass
+        value="0.528619696269044" />
+      <inertia
+        ixx="0.00188182044172336"
+        ixy="1.53443766625557E-14"
+        ixz="-3.60177668168021E-15"
+        iyy="0.00188182044145666"
+        iyz="-7.98434500551979E-14"
+        izz="0.00354238937504418" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forte_rc_description/meshes/linkWheelRF.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://forte_rc_description/meshes/linkWheelRF.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jointWheelRF"
+    type="continuous">
+    <origin
+      xyz="-0.23639811273748 0.24903430002539 0.0241782000000166"
+      rpy="1.5707963267949 -4.46008744814788E-17 -3.14159265358979" />
+    <parent
+      link="base_link" />
+    <child
+      link="linkWheelRF" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+</robot>
